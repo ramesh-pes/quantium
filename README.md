@@ -1,1 +1,1 @@
-# Chips transaction;2D;2D and customer behaviour analysis
+# Chips transaction and customer behaviour analysis
