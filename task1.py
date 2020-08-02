@@ -75,5 +75,16 @@ custDf=custDf[custDf.LYLTY_CARD_NBR!=226000]
 tranDf['PACK_SIZE']=tranDf['PROD_NAME'].str.extract(r'(\d{1,3})')
 tranDf['PACK_SIZE']=tranDf['PACK_SIZE'].astype(str).astype(int)
 
+#BRAND NAME
+tranDf['BRAND_NAME']=tranDf['PROD_NAME'].apply(lambda x: x.split(" ")[0])
+
+tranDf['BRAND_NAME']=tranDf['BRAND_NAME'].apply(lambda x: x if 'red' not in x.lower() else 'RRD')
+
+###customer dataset
+
+#cleaned dataset
+
+data.to_csv("QVI_data.csv",index=False)
+
 
 
